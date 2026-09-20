@@ -47,25 +47,25 @@ module "eks" {
   # MANAGED NODE GROUP
   # ==========================================================
 
-  eks_managed_node_groups = {
-    general = {
-      name           = "general"
-      instance_types = var.node_instance_types
-      ami_type       = "AL2023_x86_64_STANDARD"
-      capacity_type  = "ON_DEMAND"
-      min_size       = var.min_nodes
-      max_size       = var.max_nodes
-      desired_size   = var.desired_nodes
-      subnet_ids     = aws_subnet.private[*].id
-      disk_size      = 30
-      labels = {
-        role = "general"
-      }
-      tags = {
-        Name = "${var.cluster_name}-general"
-      }
-    }
-  }
+  # eks_managed_node_groups = {
+  #   general = {
+  #     name           = "general"
+  #     instance_types = var.node_instance_types
+  #     ami_type       = "AL2023_x86_64_STANDARD"
+  #     capacity_type  = "ON_DEMAND"
+  #     min_size       = var.min_nodes
+  #     max_size       = var.max_nodes
+  #     desired_size   = var.desired_nodes
+  #     subnet_ids     = aws_subnet.private[*].id
+  #     disk_size      = 30
+  #     labels = {
+  #       role = "general"
+  #     }
+  #     tags = {
+  #       Name = "${var.cluster_name}-general"
+  #     }
+  #   }
+  # }
   tags = {
     Project     = var.project_name
     Environment = var.environment
