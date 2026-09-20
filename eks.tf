@@ -1,7 +1,7 @@
 module "eks" {
   source             = "terraform-aws-modules/eks/aws"
   version            = "21.24.2"
-  region            = var.aws_region
+  region             = var.aws_region
   name               = var.cluster_name
   kubernetes_version = var.cluster_version
   # ==========================================================
