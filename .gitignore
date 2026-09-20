@@ -7,6 +7,8 @@
 *.tfstate.*
 crash.log
 crash.*.log
+.terraform.lock.hcl
+*.tfstate.backup
 
 # Local override files
 # *.tfvars
