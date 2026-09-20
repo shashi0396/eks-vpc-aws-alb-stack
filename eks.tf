@@ -4,7 +4,10 @@ module "eks" {
   region             = var.aws_region
   name               = var.cluster_name
   kubernetes_version = var.cluster_version
-  create_kms_key = false
+  # KMS / EKS secrets encryption
+  create_kms_key            = false
+  cluster_encryption_config = {}
+
   # ==========================================================
   # NETWORKING
   # ==========================================================  
