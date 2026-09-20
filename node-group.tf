@@ -8,6 +8,8 @@ module "eks_managed_node_group" {
 
   kubernetes_version = var.cluster_version
 
+  cluster_service_cidr = "172.20.0.0/16"
+
   subnet_ids = aws_subnet.private[*].id
 
   instance_types = var.node_instance_types
@@ -25,6 +27,8 @@ module "eks_managed_node_group" {
   region     = var.aws_region
   partition  = "aws"
   account_id = data.aws_caller_identity.current.account_id
+
+  iam_role_name = "${var.cluster_name}-general-node"
 
   labels = {
     role = "general"
