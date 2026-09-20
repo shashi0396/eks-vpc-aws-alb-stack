@@ -6,7 +6,7 @@ environment = "dev"
 
 cluster_name = "terraform-eks-dev"
 
-cluster_version = "1.33"
+cluster_version = "1.34"
 
 vpc_cidr = "10.0.0.0/16"
 
