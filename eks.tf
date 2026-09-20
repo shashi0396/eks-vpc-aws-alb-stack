@@ -6,7 +6,7 @@ module "eks" {
   kubernetes_version = var.cluster_version
   # KMS / EKS secrets encryption
   create_kms_key            = false
-  encryption_config = {}
+  encryption_config = null
 
   # ==========================================================
   # NETWORKING
