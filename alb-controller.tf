@@ -115,7 +115,7 @@ resource "helm_release" "aws_load_balancer_controller" {
   repository = "https://aws.github.io/eks-charts"
   chart      = "aws-load-balancer-controller"
   namespace  = "kube-system"
-  version    = "2.14.1"
+  version    = "3.4.3"
 
   wait    = true
   timeout = 600
