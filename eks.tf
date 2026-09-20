@@ -35,9 +35,9 @@ module "eks" {
   # ==========================================================
 
   addons = {
-    # coredns = {
-    #   most_recent = true
-    # }
+    coredns = {
+      most_recent = true
+    }
     kube-proxy = {
       most_recent = true
     }
