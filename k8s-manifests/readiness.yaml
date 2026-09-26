@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readiness-test
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: readiness-test
+
+  template:
+    metadata:
+      labels:
+        app: readiness-test
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+
+          readinessProbe:
+            httpGet:
+              path: /wrong-page
+              port: 80
+
+            initialDelaySeconds: 5
+            periodSeconds: 5
